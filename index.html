@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cube</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/0971974b4f.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.css"> -->
+    <link rel="stylesheet" href="./dist/css/main.min.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <img class="logo" src="./src/img/mtslogo.jpg" alt="logo mtscube" />
+      <button class="burger-btn">
+        <div class="burger-btn__box">
+          <div class="burger-btn__bars"></div>
+        </div>
+      </button>
+    </div>
+
+    <div class="mtswrapper">
+      <nav class="buttons">
+        <button
+          data-id="front-active"
+          onclick="showSection('front-active')"
+          class="button-menu button-menu-active"
+        >
+          Start
+        </button>
+        <button
+          data-id="back-active"
+          onclick="showSection('back-active')"
+          class="button-menu button-animation--isactive"
+        >
+          Strony WWW
+        </button>
+        <button
+          data-id="left-active"
+          onclick="showSection('left-active')"
+          class="button-menu button-animation"
+        >
+          Zdjęcia 360
+        </button>
+        <button
+          data-id="right-active"
+          onclick="showSection('right-active')"
+          class="button-menu button-animation"
+        >
+          Dron
+        </button>
+        <button
+          data-id="top-active"
+          onclick="showSection('top-active')"
+          class="button-menu button-animation"
+        >
+          FAQ
+        </button>
+        <button
+          data-id="bottom-active"
+          onclick="showSection('bottom-active')"
+          class="button-menu button-animation"
+        >
+          Kontakt
+        </button>
+      </nav>
+
+      <div class="cube-section">
+        <div class="cube-box">
+          <div class="cube move-away rotate">
+            <section id="mainpage" class="front">
+              <img src="bg-icon" src="" alt="" />
+              <div class="temp-content"></div>
+
+              <div class="wrapper">
+                <div class="logo__head"></div>
+                <h2 class="section-header">Czym się zajmujemy?</h2>
+                <div class="boxes">
+                  <div class="box-content">
+                    <div class="front__img-box">
+                      <img
+                        src="./dist/img/matrix-small.webp"
+                        alt="Matrix"
+                        class="front__img"
+                      />
+                    </div>
+                    <div class="front__text-box">
+                      <h2 class="front__header">Strony WWW</h2>
+                      <p class="front__text">
+                        Tworzymy profesjonalne, w pełni responsywne strony
+                        ineternetowe
+                      </p>
+                      <button
+                        data-id="bottom-active"
+                        onclick="showSection('back-active')"
+                        class="button-menu-global"
+                      >
+                        Czytaj więcej!
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="box-content box-content__rev">
+                    <div class="front__img-box">
+                      <img
+                        src="./dist/img/view-640.webp"
+                        alt="mountains"
+                        class="front__img"
+                      />
+                    </div>
+                    <div class="front__text-box">
+                      <h2 class="front__header">Zdjęcia i filmy z drona</h2>
+                      <p class="front__text">
+                        Wykonujemy zdjęcia z powietrza działek, nieruchomości,
+                        postępow z budowy i wiele innych...
+                      </p>
+                      <button
+                        data-id="bottom-active"
+                        onclick="showSection('right-active')"
+                        class="button-menu-global"
+                      >
+                        Czytaj więcej!
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="box-content box-content__show">
+                    <div class="front__img-box">
+                      <img
+                        src="./dist/img/sphere-640.webp"
+                        alt="szklana kula"
+                        class="front__img"
+                      />
+                    </div>
+                    <div class="front__text-box">
+                      <h2 class="front__header">Panoramy sferyczne</h2>
+                      <p class="front__text">
+                        Wykonamy dla Ciebie wirtualny spacer Twojej firmy.
+                        Wyróżnij się na tle konkurencji
+                      </p>
+                      <button
+                        data-id="bottom-active"
+                        onclick="showSection('left-active')"
+                        class="button-menu-global"
+                      >
+                        Czytaj więcej!
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="www" class="back">
+              <img class="bg-icon" src="" alt="" />
+              <div class="temp-content"></div>
+
+              <div class="wrapper">
+                <h2 class="section-header-second">Strony WWW</h2>
+                <p class="back-info back-info--outside">
+                  Tworzymy profesjonalne, w pełni responsywne strony
+                  ineternetowe. Tworzymy profesjonalne, w pełni responsywne
+                  strony ineternetowe. Tworzymy profesjonalne, w pełni
+                  responsywne strony ineternetowe
+                </p>
+                <div class="back__info-box">
+                  <img
+                    class="back__info-box-img"
+                    src="./dist/img/back-big.webp"
+                    alt=""
+                  />
+                  <img
+                    class="back__info-box-img-media"
+                    src="./dist/img/wwwicon.svg"
+                    alt=""
+                  />
+                  <div class="back__info-box-text">
+                    <h3 class="section-header-second">Co nas wyróżnia?</h3>
+                    <p class="back-info">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="back-info">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                    <p class="back-info">
+                      Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                    </p>
+                  </div>
+                </div>
+                <div class="cards-box">
+                  <div class="option-card">
+                    <p class="option-card--title">OnePage</p>
+                    <p class="option-card__p">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      A, ipsa?
+                    </p>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                  <div class="option-card">
+                    <span class="option-card--title">MultiPage</span>
+                    <p class="option-card__p">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      A, ipsa?
+                    </p>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                  <div class="option-card">
+                    <span class="option-card--title"
+                      >Projekt niestandardowy</span
+                    >
+                    <p class="option-card__p">
+                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                      A, ipsa?
+                    </p>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="sphere" class="left">
+              <img class="bg-icon" src="" alt="" />
+              <div class="temp-content"></div>
+
+              <div class="wrapper">
+                <h2 class="section-header">Zdjęcia Sferyczne</h2>
+
+                <div class="left__top-box">
+                  <div class="left-top-box--text">
+                    <p class="left__top-box--text">
+                      Czym są zdjęcia sferyczne?
+                    </p>
+                    <p class="left__top-box--text-p">
+                      Zdjęcia sferyczne, często nazywane też zdjęciami 360
+                      stopni, to rodzaj fotografii, która pozwala na uchwycenie
+                      pełnego 360-stopniowego pola widzenia w pionie i poziomie.
+                      To oznacza, że na jednym zdjęciu można zobaczyć wszystko,
+                      co znajduje się wokół punktu, z którego zostało zrobione
+                      zdjęcie, oraz nad i pod nim. Dzięki temu widz ma możliwość
+                      oglądania sceny z dowolnego kierunku, co jest szczególnie
+                      przydatne w wirtualnych wycieczkach, grach VR,
+                      nieruchomościach, czy w branży turystycznej.
+                    </p>
+                    <p class="left__top-box--text">Dlaczego warto?</p>
+                    <p class="left__top-box--text-p">
+                      Zdjęcia sferyczne oferują szereg unikalnych korzyści i
+                      możliwości zastosowań, które sprawiają, że są one
+                      atrakcyjne w różnych dziedzinach i sytuacjach. Oto kilka
+                      powodów, dla których warto korzystać ze zdjęć sferycznych:
+                    </p>
+                    <p class="left__top-box--text-p">
+                      Immersyjne doświadczenia: Zdjęcia sferyczne pozwalają
+                      użytkownikom na pełne zanurzenie się w scenie, oferując
+                      360-stopniowe widoki.
+                    </p>
+                  </div>
+                </div>
+                <br />
+                <div class="cards-box">
+                  <div class="option-card">
+                    <p class="option-card--title">Zdjęcia sferyczne</p>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                  <div class="option-card">
+                    <p class="option-card--title">Wirtualny spacer</p>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <ul class="option-card__list">
+                      Lorem, ipsum dolor.
+                    </ul>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="drone" class="right">
+              <img class="bg-icon" src="" alt="" />
+              <div class="temp-content"></div>
+              <div class="wrapper">
+                <h2 class="section-header">Usługi z drona</h2>
+                <div class="right__box">
+                  <img
+                    class="right__top-box--img"
+                    src="./src/img/drone-640.jpg"
+                    alt="zdjęcie z drona"
+                  />
+                  <div class="right__top-box">
+                    <img
+                      class="right__top-box--dron"
+                      src="./src/img/dron.jpg"
+                      alt="dron mavic air 2s"
+                      loading="lazy"
+                    />
+                    <div class="right__top-box-text">
+                      <p class="right__top-box-text-p">
+                        Drony, znane również jako bezzałogowe statki powietrzne
+                        (UAV - Unmanned Aerial Vehicles), to rodzaj lotniczego
+                        sprzętu, który może być sterowany zdalnie lub latać
+                        autonomicznie
+                      </p>
+                      <p class="right__top-box-text-p">
+                        Początkowo rozwijane głównie dla celów wojskowych, drony
+                        szybko znalazły zastosowanie w wielu cywilnych
+                        dziedzinach
+                      </p>
+                      <p class="right__top-box-text-p">
+                        Komercyjne i cywilne: Drony są wykorzystywane do
+                        fotografii i filmowania z powietrza, co otworzyło nowe
+                        perspektywy
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <span class="right__header">Cennik</span>
+                <div class="cards-box">
+                  <div class="option-card">
+                    <p class="option-card--title">Wersja mini</p>
+                    <ul class="option-card__list">
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                    </ul>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                  <div class="option-card">
+                    <p class="option-card--title">Wersja medium</p>
+                    <ul class="option-card__list">
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                    </ul>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                  <div class="option-card">
+                    <p class="option-card--title">Wersja film</p>
+                    <ul class="option-card__list">
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                      <li class="option-card__list-item">
+                        Lorem, ipsum dolor.
+                      </li>
+                    </ul>
+                    <button
+                      data-id="bottom-active"
+                      onclick="showSection('bottom-active')"
+                      class="button-menu-global btn-animation option-card--button"
+                    >
+                      Kontakt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section id="faq" class="top">
+              <img src="" alt="" />
+              <div class="temp-content"></div>
+              <div class="wrapper">
+                <div class="top__faq-box">
+                  <h2 class="top__faq-box-header">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit, deserunt.
+                  </h2>
+                  <p class="top__faq-box-text">Lorem ipsum dolor sit.</p>
+                  <ul>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                  </ul>
+                </div>
+                <div class="top__faq-box">
+                  <h2 class="top__faq-box-header">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit, deserunt.
+                  </h2>
+                  <p class="top__faq-box-text">Lorem ipsum dolor sit.</p>
+                  <ul>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                  </ul>
+                </div>
+                <div class="top__faq-box">
+                  <h2 class="top__faq-box-header">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                    Fugit, deserunt.
+                  </h2>
+                  <p class="top__faq-box-text">Lorem ipsum dolor sit.</p>
+                  <ul>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                    <li class="top__faq-box-text top__faq-box-li"></li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="contact" class="bottom">
+              <img class="bg-icon" src="" alt="" />
+              <div class="temp-content"></div>
+
+              <div class="wrapper">
+                <div class="contact">
+                  <div class="contact__box">
+                    <h2 class="contact__header">Napisz do nas!</h2>
+                    <p class="contact__text">Chcesz o coś zapytać?</p>
+                    <p class="contact__text">
+                      Skorzystaj z poniższych opcji lub
+                    </p>
+                    <p class="contact__text">formularza kontaktowego</p>
+                    <p class="contact__text-social">
+                      <img
+                        class="contact__text-social-icon"
+                        src="./src/img/fbicon.svg"
+                        alt=""
+                      />
+                      <a href="" class="link-underline">facebook Search IT</a>
+                    </p>
+                    <p class="contact__text-social">
+                      <img
+                        class="contact__text-social-icon"
+                        src="./src/img/posticon.svg"
+                        alt=""
+                      />
+                      lukaszkus77@gmail.com
+                    </p>
+                  </div>
+                  <div class="contact__form">
+                    <form id="contactform" action="" method="POST">
+                      <div class="contact__form-top">
+                        <div class="input-group">
+                          <label for="name" class="user-label">Imię:</label>
+                          <input
+                            required
+                            type="text"
+                            name="firstname"
+                            autocomplete="off"
+                            id="name"
+                            class="input"
+                          />
+                        </div>
+
+                        <div class="input-group">
+                          <label for="email" class="user-label">E-mail:</label>
+                          <input
+                            required
+                            type="text"
+                            class="input"
+                            name="e-mail"
+                            autocomplete="off"
+                            id="e-mail"
+                            class="input"
+                          />
+                        </div>
+
+                        <div class="input-group">
+                          <label for="message" class="user-label"
+                            >Wiadomość:</label
+                          >
+                          <input
+                            required
+                            type="text"
+                            name="message"
+                            autocomplete="off"
+                            id="message"
+                            class="input textarea"
+                          />
+                        </div>
+
+                        <div class="contact__box-btn">
+                          <button
+                            value="Submit"
+                            type="submit"
+                            class="contact__form-btn btn-animation"
+                          >
+                            Wyślij!
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+          <div class="wall-inside"></div>
+          <div class="wall-inside2"></div>
+          <div class="wall-inside3"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./dist/js/main.min.js"></script>
+  </body>
+</html>

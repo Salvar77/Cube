@@ -1,0 +1,48 @@
+@use 'colors' as *;
+
+@mixin burgerBtn {
+    position: absolute;
+    right: 0;
+    height: 3px;
+    content: '';
+    background-color: $gray-smooth;
+    transition: width .3s;
+}
+
+
+
+
+
+
+
+
+
+// @mixin respond-xs {
+//     @media (min-width: #{$breakpoint-xs}) {
+//         @content;
+//     }
+// }
+
+// @mixin respond-sm {
+//     @media (min-width: #{$breakpoint-sm}) {
+//         @content;
+//     }
+// }
+
+// @mixin respond-md {
+//     @media (min-width: #{$breakpoint-md}) {
+//         @content;
+//     }
+// }
+
+// @mixin respond-lg {
+//     @media (min-width: #{$breakpoint-lg}) {
+//         @content;
+//     }
+// }
+
+// @mixin respond-xl {
+//     @media (min-width: #{$breakpoint-xl}) {
+//         @content;
+//     }
+// }
