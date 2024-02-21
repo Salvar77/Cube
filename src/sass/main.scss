@@ -152,6 +152,15 @@ button {
   }
 }
 
+.logo {
+  position: fixed;
+  top: 1rem;
+  left: -9rem;
+  max-height: 25rem;
+  max-width: 25rem;
+  z-index: 10000;
+}
+
 .buttons {
   position: absolute;
   display: flex;
