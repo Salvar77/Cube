@@ -47,6 +47,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   // flex-wrap: wrap;
   // min-width: 100vmin;
   // min-height: 100%;
@@ -173,6 +174,9 @@ button {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
+  @media (min-width: 992px) {
+    margin-left: 1.6rem;
+  }
   // &--isactive {
   // 	transform: translateX(0);
   // }
@@ -339,13 +343,17 @@ button {
 
 .front {
   &__text-box {
-    width: 100%;
+    // width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 2rem;
-
+    padding: 2rem;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    // background-color: rgba($gray-smooth, 0.5);
+    box-shadow: 0.2rem 0.4rem 2rem 0.2rem;
+    border-radius: 0.4rem;
     color: $white-smooth;
   }
 
@@ -372,6 +380,7 @@ button {
 
       img {
         width: 100%;
+        padding: 0.6rem;
       }
     }
   }
@@ -392,6 +401,7 @@ button {
     width: 95%;
     max-height: 100%;
     border-radius: 1rem;
+    padding: 1rem;
   }
 
   .button-menu-global {
@@ -450,6 +460,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid white;
 
   .section-header {
     color: $white-smooth;
@@ -468,12 +479,19 @@ button {
 
   &-info {
     font-size: 2rem;
-    margin: 1rem;
+
+    font-weight: bold;
+    // background-color: rgba($gray-smooth, 0.2);
+    box-shadow: 0.2rem 0.4rem 2rem 0.2rem;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    color: $white-smooth;
   }
 
   &-info--outside {
-    padding: 2rem;
     padding: 1rem;
+    margin: 1rem;
+    font-weight: bold;
   }
 
   &__info-box {
@@ -485,7 +503,7 @@ button {
 
     &-img {
       max-width: 50%;
-      padding: 1rem;
+      padding: 2rem;
       &-media {
         display: none;
       }
@@ -627,7 +645,9 @@ button {
 
   .contact {
     // position: relative;
-
+    border: 5px solid white;
+    background-color: rgba($gray-smooth, 0.5);
+    box-shadow: 0.2rem 0.4rem 2rem 0.2rem;
     color: $white-smooth;
     padding: 2rem;
     // width: 100%;
@@ -735,9 +755,9 @@ button {
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  // flex-grow: 1;
+  flex: 1;
   // flex-direction: column;
-  min-height: 100%;
+  max-width: 100%;
 }
 
 .option-card {
@@ -748,8 +768,7 @@ button {
   padding: 1rem;
   font-weight: bold;
   // flex-grow: 1;
-  min-height: 100%;
-
+  min-width: 20rem;
   border: 1px solid black;
   border-radius: 0.5rem;
   background-color: $white-smooth;
@@ -985,7 +1004,7 @@ button {
 
     .back {
       transform: rotateY(180deg) rotatez(180deg)
-        translateZ(calc($cubeSizeMobile/4));
+        translateZ(calc($cubeSizeMobile / 4));
 
       // width: 100%;
       // overflow: scroll;
