@@ -320,8 +320,8 @@ button {
 }
 
 .cube > div {
-  // Dla wszystkich bezpośrednich dzieci kostki (ścian)
-  transform-style: preserve-3d;
+  backface-visibility: hidden; /* Zapobiega pokazywaniu tyłu obróconych elementów */
+  -webkit-backface-visibility: hidden; /* Dla Safari i Chrome */
 }
 
 .front-active {
