@@ -265,6 +265,7 @@ button {
     width: $cubeSizes;
     height: $cubeSizes;
     // aspect-ratio: 1 / 1;
+    -webkit-transform-style: preserve-3d; /* dla Safari */
     transform-style: preserve-3d;
 
     animation: rotate 10s infinite linear;
@@ -320,31 +321,37 @@ button {
 }
 
 .cube > div {
-  backface-visibility: hidden; /* Zapobiega pokazywaniu tyłu obróconych elementów */
-  -webkit-backface-visibility: hidden; /* Dla Safari i Chrome */
+  -webkit-backface-visibility: hidden; /* dla Safari */
+  backface-visibility: hidden;
 }
 
 .front-active {
+  -webkit-transform: rotate(0); /* dla Safari */
   transform: rotate(0);
 }
 
 .back-active {
+  -webkit-transform: rotateY(180deg) rotateZ(180deg); /* dla Safari */
   transform: rotateY(180deg) rotateZ(180deg);
 }
 
 .left-active {
+  -webkit-transform: rotateY(-90deg) rotateZ(180deg); /* dla Safari */
   transform: rotateY(-90deg) rotateZ(180deg);
 }
 
 .right-active {
+  -webkit-transform: rotateY(90deg) rotateZ(180deg); /* dla Safari */
   transform: rotateY(90deg) rotateZ(180deg);
 }
 
 .top-active {
+  -webkit-transform: rotateX(90deg) rotateZ(180deg); /* dla Safari */
   transform: rotateX(90deg) rotateZ(180deg);
 }
 
 .bottom-active {
+  -webkit-transform: rotateX(270deg) rotateZ(180deg); /* dla Safari */
   transform: rotateX(270deg) rotateZ(180deg);
 }
 
@@ -946,7 +953,7 @@ button {
     height: $cubeSizeMobile;
     width: $cubeSizeMobile;
 
-    perspective: 100vmin;
+    perspective: 100vmax;
     // transform-origin: 50% 50%;
   }
 
