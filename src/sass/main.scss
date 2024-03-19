@@ -953,7 +953,7 @@ button {
     height: $cubeSizeMobile;
     width: $cubeSizeMobile;
 
-    perspective: 100vmax;
+    perspective: 100vmin;
     // transform-origin: 50% 50%;
   }
 
@@ -1026,7 +1026,8 @@ button {
         flex-direction: column;
         margin: auto;
         border: none;
-        transform: scale(0.8);
+        transform: scale(0.85);
+        padding: 2rem;
         // width: calc($cubeSizeMobile - 2rem);
         // height: calc($cubeSizeMobile - 2rem);
       }
@@ -1110,7 +1111,7 @@ button {
     .right {
       transform: rotateY(90deg) rotateZ(180deg)
         translateZ(calc($cubeSizeMobile / 2));
-      // height: 100vh;
+      padding-bottom: 5rem;
       &__header {
         display: none;
       }
