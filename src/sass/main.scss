@@ -1,6 +1,6 @@
 // $cubeSizes: min(min(65vmin, 70vmax), 1200px);
 $cubeSizes: min(min(100vmin, 100vmax), 1000px);
-$cubeSizeMobile: min(min(10vmin, 10vmax), 100px);
+$cubeSizeMobile: 100vmin;
 
 @use "./elements/" as *;
 
@@ -237,9 +237,9 @@ button {
   width: 100%;
   max-width: 1600px;
 
-  @media (max-width: 768px) {
-    overflow: scroll;
-  }
+  // @media (max-width: 768px) {
+  //   overflow: scroll;
+  // }
 }
 
 .cube-section {
@@ -349,6 +349,9 @@ button {
 }
 
 .front {
+  .section-header {
+    padding: 1rem;
+  }
   &__text-box {
     // width: 100%;
     display: flex;
@@ -404,10 +407,14 @@ button {
 
   &__img {
     // position: relative;
-    width: 98%;
+    width: 100%;
     max-height: 100%;
     border-radius: 1rem;
     padding: 1rem;
+
+    @media (min-width: 768px) {
+      width: 93%;
+    }
   }
 
   .button-menu-global {
@@ -479,7 +486,7 @@ button {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid white;
+  // border: 2px solid white;
 
   .section-header {
     color: $white-smooth;
@@ -834,6 +841,7 @@ button {
 .section-header {
   text-align: center;
   color: white;
+  padding: 1rem;
 
   @media (min-width: 768px) {
     display: none;
@@ -974,10 +982,23 @@ button {
 
     .front {
       transform: translateZ(calc($cubeSizeMobile / 2));
-      padding-top: 5rem;
+      // padding-top: -2rem;
       margin: 1rem;
+
+      @media (max-width: 376px) {
+        padding-top: 5rem;
+      }
       .section-header {
         margin-bottom: -1rem;
+
+        box-shadow: 0.2rem 0.4rem 2rem 0.2rem;
+        color: $white-smooth;
+        border-radius: 0.4rem;
+        margin-bottom: -3rem;
+
+        @media (max-width: 391px) {
+          transform: scale(0.8);
+        }
       }
       &__header {
         font-size: 2rem;
@@ -1017,6 +1038,7 @@ button {
         max-width: 100%;
         // transform: scale(0.8);
         object-fit: cover;
+        border-radius: 0.4rem;
       }
     }
 
@@ -1035,27 +1057,27 @@ button {
       }
 
       &-info {
+        display: flex;
+        align-items: center;
+        max-width: 100%;
         text-align: center;
         font-weight: bold;
-        transform: scale(0.8);
+        transform: scale(0.7);
 
         &--outside {
+          width: 100%; /* Zajmuje maksymalnie 100% szerokości kontenera */
+          box-sizing: border-box; /* Upewnia się, że padding i border są wliczone w szerokość */
+          padding: 1rem 1rem; /* Daje trochę przestrzeni od krawędzi */
+          margin: 0 auto; /* Wyśrodkowanie, jeśli element byłby mniejszy niż 100% */
           transform: scale(0.8);
-          font-size: 0.4rem;
         }
       }
 
       &__info-box {
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto;
-        transform: scale(0.8);
+        display: none;
 
         &-img {
-          max-width: 50%;
-          &-media {
-            max-width: 50%;
-          }
+          display: none;
         }
       }
     }
