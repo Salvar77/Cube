@@ -1,79 +1,46 @@
-const cube = document.querySelector(".cube");
-const navButtons = document.querySelector(".buttons");
-const allNavButtons = document.querySelectorAll(".button-menu");
-const navBtn = document.querySelector(".burger-btn");
-const navBtnBars = document.querySelector(".burger-btn__bars");
-let classCube = "front-active";
+let nextDom = document.getElementById("next");
+let prevDom = document.getElementById("prev");
+let carouselDom = document.querySelector(".carousel");
+let listItemDom = document.querySelector(".carousel .list");
+let thumbnailDom = document.querySelector(".carousel .thumbnail");
 
-const showSection = (className) => {
-  cube.classList.remove(classCube);
-  cube.classList.add(className);
-
-  classCube = className;
-
-  const currentActiveButton = document.querySelector(
-    `[data-id="${className}"]`
-  );
-
-  const allActiveButtons = document.querySelectorAll(".button-menu-active");
-  allActiveButtons.forEach((button) => {
-    button.classList.remove("button-menu-active");
-  });
-
-  currentActiveButton.classList.add("button-menu-active");
-};
-
-const handleNav = () => {
-  navButtons.classList.toggle("buttons--isactive");
-
-  allNavButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      navButtons.classList.remove("buttons--isactive");
-      handleNavItemsAnimation();
-    });
-  });
-
-  handleNavItemsAnimation();
-};
-
-const handleNavItemsAnimation = () => {
-  let delayTime = 5;
-
-  allNavButtons.forEach((button) => {
-    button.classList.toggle("button-animation");
-    // animation-delay: .3s;
-    button.style.animationDelay = "." + delayTime + "s";
-    delayTime++;
-  });
-};
-
-const handleNavClick = () => {
-  cube.classList.add("cube-small");
-
-  setTimeout(() => {
-    cube.classList.remove("cube-small");
-  }, 500);
-};
-
-navBtn.addEventListener("click", () => {
-  // Najpierw odsuń kostkę
-  cube.classList.add("move-away");
-
-  // Po zakończeniu animacji odsunięcia, obróć kostkę
-  cube.addEventListener(
-    "transitionend",
-    () => {
-      cube.classList.remove("move-away");
-      cube.classList.add("rotate");
-    },
-    { once: true }
-  ); // once: true sprawia, że nasłuchiwanie zdarzenia jest jednorazowe
+nextDom.addEventListener("click", function () {
+  showSlider("next");
 });
 
-// Nasłuchujemy kliknięcia w każdy przycisk nawigatora
-navButtons.addEventListener("click", handleNavClick);
-cube.addEventListener("transitionend", () => {
-  console.log("Animation ended");
+prevDom.addEventListener("click", function () {
+  showSlider("prev");
 });
-navBtn.addEventListener("click", handleNav);
-console.log("allNavButtons", allNavButtons);
+
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+let runTimeOut;
+let runAutoRun = setTimeout(() => {
+  nextDom.click();
+}, timeAutoNext);
+
+function showSlider(type) {
+  let itemSlider = document.querySelectorAll(".carousel .list .item");
+  let itemThumbnail = document.querySelectorAll(".carousel .thumbnail .item");
+
+  if (type === "next") {
+    listItemDom.appendChild(itemSlider[0]);
+    thumbnailDom.appendChild(itemThumbnail[0]);
+    carouselDom.classList.add("next");
+  } else {
+    let positionLastItem = itemSlider.length - 1;
+    listItemDom.prepend(itemSlider[positionLastItem]);
+    thumbnailDom.prepend(itemThumbnail[positionLastItem]);
+    carouselDom.classList.add("prev");
+  }
+  clearTimeout(runTimeOut);
+  runTimeOut = setTimeout(() => {
+    carouselDom.classList.remove("next");
+    carouselDom.classList.remove("prev");
+  }, timeRunning);
+
+  clearTimeout(runAutoRun);
+  runAutoRun = setTimeout(() => {
+    nextDom.click();
+  }, timeAutoNext);
+}
